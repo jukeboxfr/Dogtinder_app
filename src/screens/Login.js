@@ -24,9 +24,9 @@ const Background = (props) => (
   </ImageBackground>
 )
 
-const Underline = (props) => {
+const Link = (props) => {
   return (
-    <Text style={{ textDecorationLine: "underline" }}>
+    <Text style={{ textDecorationLine: "underline", fontWeight: "bold" }}>
       {props.children}
     </Text>
   )
@@ -46,12 +46,12 @@ const Login = () => {
   const onChangePassword = password => setPassword(password)
 
   return (
-    <View style={{ flex: 1 }}>
-      <Text style={styles.welcome}>En te connectant, tu acceptes nos <Underline>Conditions
-        générales.</Underline> Pour en savoir plus sur l'usage
+    <View style={styles.welcome}>
+      <Text style={styles.welcomeText}>En te connectant, tu acceptes nos <Link>Conditions
+        générales.</Link> Pour en savoir plus sur l'usage
         que nous faisons de tes données, consultez notre
-        <Underline>Politique de confidentialité</Underline> et notre Politique
-        en matières de Cookies.</Text>
+        <Link> Politique de confidentialité</Link> et notre <Link>Politique
+        en matières de Cookies.</Link></Text>
     </View>
   )
 }
@@ -59,7 +59,7 @@ const Login = () => {
 
 const LoginIn = (props) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.socialButton}>
       <TouchableOpacity style={styles.button}>
         {props.icon}
         <Text style={styles.buttonText}>{props.children}</Text>
@@ -70,10 +70,21 @@ const LoginIn = (props) => {
 
 const ForgotButton = (props) => {
   return (
-    <View style={{ flex: 1, alignSef: "flex-end" }}>
+    <View style={styles.loginItem}>
       <TouchableOpacity style={styles.forgotButton}>
         <Text style={styles.forgotButtonText}>{props.children}</Text>
       </TouchableOpacity>
+    </View>
+  )
+
+}
+
+const SocialsButtons = (props) => {
+  return (
+    <View style={styles.socials}>
+      <LoginIn icon={GoogleIcon()}>connexion avec google</LoginIn>
+      <LoginIn icon={FacebookIcon()}>connexion avec facsebook</LoginIn>
+      <LoginIn icon={PhoneIcon()}>connexion avec un numéro</LoginIn>
     </View>
   )
 }
@@ -81,11 +92,9 @@ const ForgotButton = (props) => {
 export default function App() {
   return (
     <Background>
-        <View style={{flex: 1}}>
+        <View style={styles.login}>
           <Login />
-          <LoginIn icon={GoogleIcon()}>connexions avec google</LoginIn>
-          <LoginIn icon={FacebookIcon()}>connexion davec facebook</LoginIn>
-          <LoginIn icon={PhoneIcon()}>connexion avec un numéro</LoginIn>
+          <SocialsButtons />
           <ForgotButton>Problème de connexion?</ForgotButton>
         </View>
       </Background>
@@ -94,17 +103,54 @@ export default function App() {
 
 const styles = StyleSheet.create({
 
+  login: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
+
+  loginItem: {
+    flex: 1
+  },
+
+  socialButton: {
+
+  },
+
+  socials: {
+    marginTop: 60,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    flexWrap: "wrap"
+  },
+
+  welcome: {
+    marginTop: 180,
+    padding: 30
+  },
+
+  welcomeText: {
+    color: "#FFFFFF",
+    textShadowOffset: { width: 0, height: 3 },
+    textShadowRadius: 4
+  },
+
+
   forgotButton: {
-    alignSelf: "flex-end"
+
   },
 
   forgotButtonText: {
     textAlign: "center",
     color: "#FFFFFF",
     textShadowOffset: { width: 0, height: 3 },
-    textShadowRadius: 4
-
+    textShadowRadius: 4,
+    fontWeight: "bold"
   },
+
   button: {
     display: "flex",
     justifyContent: "space-between",
@@ -112,7 +158,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     margin: 10,
     width: 300,
-    padding: 20,
+    padding: 15,
     backgroundColor: "#FFFFFF",
     borderRadius: 33,
     shadowOffset: { width: 3, height: 6 },
@@ -128,11 +174,6 @@ const styles = StyleSheet.create({
     textTransform: "uppercase"
   },
 
-  welcome: {
-    color: "#FFFFFF",
-    textShadowOffset: { width: 0, height: 3 },
-    textShadowRadius: 4
-  },
   container: {
     backgroundColor: "#FCB4B8",
     flex: 1,
