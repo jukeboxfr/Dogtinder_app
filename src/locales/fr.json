@@ -1,0 +1,62 @@
+{
+
+  "LOGIN": {
+    "TEXT": "En te connectant, tu acceptes nos Conditions générales. Pour en savoir plus sur l'usage que nous faisons de tes données, consultez notre Politique de confidentialité et notre Politique en matières de Cookies.",
+    "BUTTONS": {
+      "LOGIN_FACEBOOK": "CONNEXION AVEC FACEBOOK",
+      "LOGIN_GOOGLE":   "CONNEXION AVEC GOOGLE",
+      "LOGIN_PHONE":    "CONNEXION AVEC UN NUMÉRO",
+      "FORGOT":         "PROBLÈME DE CONNEXION?"
+    }
+  },
+
+  "PHONE_LOGIN": {
+      "TITLE": "Mon numéro",
+      "TEXT": "Appuie sur Continuer pour recevoir un message de la part de Dogtinder. Le numéro de téléphone vérifié pourra être utilisé pour te connecter. ",
+      "FIELDS": {
+        "NUMBER_CODE": "+33 FR",
+        "NUMBER"     : "0 00 00 00 00"
+      },
+      "BUTTONS": {
+        "CONTINUE": "CONTINUER"
+      }
+  },
+
+  "VALIDATION": {
+      "TITLE": "Mon code",
+      "BUTTONS": {
+        "RESEND": "RENVOYER",
+        "CONTINUE": "CONTINUER"
+      }
+  },
+
+  "MAIL": {
+    "TITLE": "MON ADRESSE E-MAIL",
+    "TEXT": "VÉRIFIE TON ADRESSE E-MAIL POUR NE PAS PERDRE L'ACCÈS À TON COMPTE.",
+    "FIELDS": {
+      "EMAIL": "ENTRE TON E-MAIL"
+    },
+    "BUTTONS": {
+      "CONTINUE": "CONTINUER",
+      "LOGIN_FACEBOOK": "SE CONNECTER AVEC FACEBOOK"
+    }
+  },
+
+  "FORGOT": {
+    "TITLE" : "RÉCUPERATION DE COMPTE",
+    "TEXT"  : "Tu as changé de numéro de téléphone ou perdu l'accès àton compte Facebook ? On peut t'aider à te connecter avec ton adresse e-mail.",
+    "BUTTONS" : {
+      "SUBMIT" : "CONNEXION AVEC UNE ADRESSE E-MAIL"
+    }
+  },
+
+  "FORGOT_FORM": {
+    "TITLE": "SE CONNECTER AVEC UNE ADRESSE E-MAIL",
+    "FIELDS": {
+      "EMAIL": "TON ADRESSE E-MAIL EST"
+    },
+    "BUTTONS": {
+      "SUBMIT": "ENVOYER UN E-MAIL"
+    }
+  }
+}
