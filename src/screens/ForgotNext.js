@@ -5,10 +5,7 @@ import SimpleLayout from "../components/templates/SimpleLayout"
 
 import ForgotStyle from "../styles/Forgot"
 
-import Input from "../components/atoms/Input"
-import Title from "../components/atoms/Title";
-import Button from "../components/atoms/Button"
-import Header from "../components/templates/Header";
+import { Input, Title, Button, Header } from "../components";
 
 import fr from "../locales/fr.json";
 
@@ -20,7 +17,7 @@ class ForgotNext extends Component {
 
   render() {
     return (
-      <SimpleLayout>
+      <SimpleLayout navigation={this.props.navigation}>
         <View style={ForgotStyle.container}>
           <Title>{fr.FORGOT_FORM.TITLE}</Title>
           <View style={{ selfAlign: "center" }}>

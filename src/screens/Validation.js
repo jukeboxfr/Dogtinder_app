@@ -6,10 +6,8 @@ import SimpleLayout from "../components/templates/SimpleLayout"
 
 import ValidationStyle from "../styles/Validation"
 
-import CodeInput from "../components/atoms/CodeInput"
-import Title from "../components/atoms/Title";
-import Button from "../components/atoms/Button"
-import Header from "../components/templates/Header";
+
+import { CodeInput, Title, Button, Header } from "../components";
 
 import fr from "../locales/fr.json";
 

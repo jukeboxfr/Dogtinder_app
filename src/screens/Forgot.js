@@ -6,9 +6,7 @@ import SimpleLayout from "../components/templates/SimpleLayout"
 
 import ForgotStyle from "../styles/Forgot"
 
-import Title from "../components/atoms/Title";
-import Button from "../components/atoms/Button"
-import Header from "../components/templates/Header";
+import { Title, Button, Header } from "../components";
 
 import fr from "../locales/fr.json";
 

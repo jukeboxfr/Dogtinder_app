@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, View} from "react-native";
+import styles from "../../styles/Layout";
 
 import Header from "./Header";
 
@@ -15,12 +16,3 @@ export default class SimpleLayout extends Component {
   )
   }
 }
-
-const styles = StyleSheet.create({
-  "container": {
-    "backgroundColor": "white",
-    "flex": 1,
-    "display": "flex",
-    "flexDirection": "column"
-  }
-})

@@ -1,11 +1,9 @@
 import React, { useState, Component } from "react";
 import { View, Text, ImageBackground, TouchableOpacity, Image } from "react-native";
-import Title from "../components/atoms/Title"
-import Button from "../components/atoms/Button"
-import NumberInput from "../components/molecules/NumberInput";
+
+import { Title, Button, NumberInput } from "../components";
 
 import fr from "../locales/fr.json";
-
 
 import RegisterStyle from "../styles/Register";
 
@@ -34,7 +32,6 @@ const Header = (props) => {
     </View>
   )
 }
-
 
 class RegisterForm extends Component {
 
