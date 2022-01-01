@@ -73,6 +73,24 @@ styles.roundButton = {
   borderRadius: 100
 }
 
+styles.miniButton = {
+  padding: 5,
+  backgroundColor: "#fff",
+  borderColor: "#707070",
+  borderWidth: 2,
+  color: "#000"
+}
+
+styles.innerMiniButton = {
+  fontWeight: "bold",
+  fontSize: 10,
+  color: "#000"
+}
+
+
+
+
+
 styles.innerButtonIcon = {}
 styles.innerButtonIcon.marginLeft = "auto";
 

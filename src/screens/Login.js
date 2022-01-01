@@ -3,7 +3,7 @@ import { ImageBackground, View, Text } from 'react-native';
 
 import styles from "../styles/LoginLayout";
 
-import { ButtonIcon, A, Icon } from "../components";
+import { ButtonIcon, TextLink, Icon } from "../components";
 
 
 import fr from "../locales/fr.json";
@@ -30,13 +30,13 @@ class Login extends Component {
     return (
       <ImageBackground style={styles.container} resizeMode="cover" source={BACKGROUND_IMAGE}>
         <View style={styles.login}>
-          <Text style={styles.welcomeText}>{fr.LOGIN.TEXT}</Text>
-          <View style={styles.buttons}>
+          <Text style={styles.landingText}>{fr.LOGIN.TEXT}</Text>
+          <View style={styles.buttonsContainer}>
             <ButtonIcon style={styles.googleBtn} innerStyle={styles.innerGoogleBtn} icon={GoogleIcon}>{fr.LOGIN.BUTTONS.LOGIN_GOOGLE}</ButtonIcon>
             <ButtonIcon style={styles.facebookBtn} innerStyle={styles.innerFacebookBtn} icon={FacebookIcon}>{fr.LOGIN.BUTTONS.LOGIN_FACEBOOK}</ButtonIcon>
             <ButtonIcon onPress={() => this.onPressLogin()} style={styles.phoneBtn} innerStyle={styles.innerPhoneBtn} icon={PhoneIcon}>{fr.LOGIN.BUTTONS.LOGIN_PHONE}</ButtonIcon>
           </View>
-          <A onPress={() => this.onPressForgot()} innerStyle={styles.innerForgot}>{fr.LOGIN.BUTTONS.FORGOT}</A>
+          <TextLink onPress={() => this.onPressForgot()} innerStyle={styles.forgotLink}>{fr.LOGIN.BUTTONS.FORGOT}</TextLink>
         </View>
       </ImageBackground>
     )

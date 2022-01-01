@@ -1,5 +1,11 @@
 {
 
+  "COUNTRIES": [
+    {"_country": "AF", "name": "Afganistan", "code": "+93"},
+    {"_country": "ZA", "name": "Afrique du Sud", "code": "+27"},
+    {"_country": "AL", "name": "Albanie", "code": "+355"},
+    {"_country": "FR", "name": "France", "code": "+33"}
+  ],
   "LOGIN": {
     "TEXT": "En te connectant, tu acceptes nos Conditions générales. Pour en savoir plus sur l'usage que nous faisons de tes données, consultez notre Politique de confidentialité et notre Politique en matières de Cookies.",
     "BUTTONS": {
@@ -32,7 +38,8 @@
 
   "MAIL": {
     "TITLE": "MON ADRESSE E-MAIL",
-    "TEXT": "VÉRIFIE TON ADRESSE E-MAIL POUR NE PAS PERDRE L'ACCÈS À TON COMPTE.",
+    "TEXT": "Vérifie ton adresse e-mail pour ne pas perdre l'accès à ton compte.",
+    "OR": "OU",
     "FIELDS": {
       "EMAIL": "ENTRE TON E-MAIL"
     },
@@ -52,6 +59,7 @@
 
   "FORGOT_FORM": {
     "TITLE": "SE CONNECTER AVEC UNE ADRESSE E-MAIL",
+    "LABEL": "Nous allons t'envoyer un lien pour te connecter",
     "FIELDS": {
       "EMAIL": "TON ADRESSE E-MAIL EST"
     },

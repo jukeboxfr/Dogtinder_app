@@ -1,44 +1,61 @@
+import { StyleSheet } from "react-native";
 import Layout from "./Layout";
 import Colors from "./colors";
 
-const text = {
-  color: Colors.onPrimary
+const container =  {
+  ...Layout.getContainerWithPadding(20),
+  backgroundColor: Colors.primary
 }
 
-const SocialBtn = {
-  margin: 10,
-  width: 300
-}
+const buttonsContainer = { ...Layout.colsCenter, marginTop: 100 }
 
-const innerSocialBtn = {
-  fontSize: 15,
-  fontWeight: "bold"
-}
-
-const buttonsContainer = {
-  ...Layout.colsCenter
-}
+const SocialBtn = { margin: 10, width: 300 }
 
 const facebookBtn = { ...SocialBtn, backgroundColor: Colors.facebook }
-const googleBtn   = { ...SocialBtn, backgoundColor: Colors.google }
+const googleBtn   = { ...SocialBtn, backgroundColor: Colors.google }
 const phoneBtn    = { ...SocialBtn, backgroundColor: Colors.phone }
 
-const innerFacebookBtn = { ...innerSocialBtn, color: Colors.grey }
-const innerGoogleBtn   = { ...innerSocialBtn, color: Colors.grey }
-const innerPhoneBtn    = { ...innerSocialBtn, color: Colors.grey }
+const innerBtn = { fontSize: 15, fontWeight: "bold" }
 
-const textLink             = {
+const innerFacebookBtn = { ...innerBtn, color: Colors.white }
+const innerGoogleBtn   = { ...innerBtn, color: Colors.grey }
+const innerPhoneBtn    = { ...innerBtn, color: Colors.white }
+
+const submitBtn      = { margin: 10, width: 300, backgroundColor: Colors.green, alignSelf: "center" }
+const innerSubmitBtn = { ...innerBtn, color: Colors.white }
+
+
+const landingText = { color: Colors.onPrimary, ...Layout.textCenter }
+
+const forgotLink             = {
+  ...landingText,
   textShadowOffset: { width: 0, height: 3 },
   textShadowRadius: 6,
   textShadowColor: "#000",
   textTransform: "capitalize"
 }
 
-export default {
+const registerText            = {
+  padding: 10,
+  color: Colors.grey
+}
+
+export default StyleSheet.create({
   facebookBtn, innerFacebookBtn,
   googleBtn, innerGoogleBtn,
   phoneBtn, innerPhoneBtn,
 
+  submitBtn,
+  innerSubmitBtn,
+
+  login: Layout.colsCenter,
+
+  container,
   buttonsContainer,
-  textLink,
-}
+
+  landingText,
+  registerText,
+  forgotLink,
+
+
+})

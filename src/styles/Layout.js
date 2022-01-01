@@ -1,16 +1,21 @@
-import React from "react";
-import { StyleSheet } from "react-native";
-
-
+import { StatusBar } from "react-native";
 import Colors from "./colors";
 
 const container = {
-  backgroundColor: Colors.primary,
+  marginTop: StatusBar.currentHeight,
+
   flex: 1,
+
   display: "flex",
   flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+
   fontFamily: "Roboto"
 }
+
+const getContainerWithPadding = (padding) =>
+  ({ ...container, padding })
 
 const colsCenter = {
   display: "flex",
@@ -20,9 +25,31 @@ const colsCenter = {
   flexWrap: "wrap"
 }
 
-const styles = {
-  container,
-  colsCenter
+const textCenter = {
+  textAlign: "center"
 }
 
-export default StyleSheet.create(styles);
+const backButton = {
+  backgroundColor: Colors.white,
+  width: 55,
+  height: 55,
+  shadowCalor: Colors.grey,
+  shadowOffset: { width: 0, height: 4 },
+  shadowOpacity: 0.32,
+  shadowRadius: 5.46,
+  elevation: 9
+}
+
+const backButtonIcon = { width: 30, height: 30 }
+
+export default {
+  container,
+
+  colsCenter,
+  textCenter,
+
+  backButton,
+  backButtonIcon,
+
+  getContainerWithPadding
+}

@@ -1,65 +1,85 @@
 import React, { useState, Component } from "react";
 import { View, Text, ImageBackground, TouchableOpacity, Image } from "react-native";
-
-import { Title, Button, NumberInput } from "../components";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import fr from "../locales/fr.json";
 
-import RegisterStyle from "../styles/Register";
+import { changePhoneNumber } from "../actions/register";
+import { Title, Button, NumberInput, RegisterLayout } from "../components";
+import styles from "../styles/LoginLayout";
 
-const CloseButton = (props) => {
-
-  const onPress = () =>
-    props.navigation.goBack();
-
-  return (
-    <TouchableOpacity style={RegisterStyle.closeButton} onPress={onPress}>
-      <Image style={{ height: 35, width: 35 }} source={require("../../assets/images/home_cross.png")}>
-      </Image>
-    </TouchableOpacity>
-  )
-}
-
-
-const Header = (props) => {
-  return (
-    <View style={RegisterStyle.header}>
-      <View style={RegisterStyle.headerImage}>
-        <ImageBackground style={RegisterStyle.backgroundImage} resizeMode="contain" source={require("../../assets/images/background/header_background.png")}>
-          {props.children}
-        </ImageBackground>
-      </View>
-    </View>
-  )
-}
-
-class RegisterForm extends Component {
-
-  render() {
-    return (
-      <View style={RegisterStyle.registerForm}>
-        <Title style={RegisterStyle.registerTitle}>{fr.PHONE_LOGIN.TITLE}</Title>
-        <NumberInput placeholder="7 68 50 16 70" />
-        <Text>{fr.PHONE_LOGIN.TEXT}</Text>
-        <Button style={RegisterStyle.submit}>Continuer</Button>
-      </View>
-    )
-  }
-}
 
 class Register extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      phoneNumber: {
+        country: this.props.phoneNumber._country,
+        code: this.props.phoneNumber.code,
+        number: this.props.phoneNumber.number
+      }
+    }
+  }
+
+  onPressContinue() {
+    this.props.actions.changePhoneNumber(this.state.phoneNumber)
+    this.props.navigation.navigate("PhoneValidation")
+  }
+
+  onChangeNumberCode(phoneNumber) {
+
+
+    this.setState({
+      phoneNumber: {
+        country: phoneNumber._country,
+        code: phoneNumber.code,
+        number: this.state.phoneNumber.number
+      }
+    })
+  }
+
+  onChangeNumberPhone(number) {
+    this.setState({
+      phoneNumber: {
+        country: this.state.phoneNumber._country,
+        code: this.state.phoneNumber.code,
+        number
+      }
+    })
+  }
+
+  onPressNumberCode() {
+    this.props.navigation.navigate("SelectList", {
+      list: fr.COUNTRIES,
+      onGoBack: this.onChangeNumberCode.bind(this)
+    })
+  }
 
   render() {
+    const navigation = this.props.navigation;
+    console.log("render", this.state.phoneNumber)
     return (
-      <View style={RegisterStyle.container}>
-        <Header />
-        <CloseButton navigation={this.props.navigation} />
-        <RegisterForm />
-      </View>
+      <RegisterLayout navigation={navigation}>
+        <Title>{fr.PHONE_LOGIN.TITLE}</Title>
+        <NumberInput onPressNumberCode={this.onPressNumberCode.bind(this)} onChangeNumberPhone={this.onChangeNumberPhone.bind(this)} value={this.state.phoneNumber} />
+        <Text style={styles.registerText}>{fr.PHONE_LOGIN.TEXT}</Text>
+        <Button onPress={this.onPressContinue.bind(this)} style={styles.submitBtn}>{fr.PHONE_LOGIN.BUTTONS.CONTINUE}</Button>
+      </RegisterLayout>
     )
   }
 }
 
+const ActionCreators = { changePhoneNumber }
 
-export default Register;
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(ActionCreators, dispatch)
+})
+
+const mapStateToProps = state => ({
+  phoneNumber: state.register.phoneNumber
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);

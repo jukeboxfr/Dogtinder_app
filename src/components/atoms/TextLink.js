@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import ButtonStyle from "../../styles/buttons";
 
-const A = (props) => {
+const TextLink = (props) => {
 
   const { style, innerStyle, onPress } = props;
 
@@ -13,4 +13,4 @@ const A = (props) => {
   )
 }
 
-export default A;
+export default TextLink;
