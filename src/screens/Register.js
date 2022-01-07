@@ -17,7 +17,7 @@ class Register extends Component {
 
     this.state = {
       phoneNumber: {
-        country: this.props.phoneNumber._country,
+        country: this.props.phoneNumber.country,
         code: this.props.phoneNumber.code,
         number: this.props.phoneNumber.number
       }

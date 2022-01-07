@@ -9,6 +9,7 @@ import ForgotPassword from "../screens/ForgotPassword";
 import PhoneValidation from "../screens/PhoneValidation"
 import SelectList from "../screens/SelectList"
 import EmailConfirmation from "../screens/EmailConfirmation";
+import Meetings from "../screens/Meetings"
 
 const Stack = createStackNavigator()
 const LoginRouter = () => {
@@ -16,12 +17,13 @@ const LoginRouter = () => {
     <NavigationContainer>
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Registesr" component={Register} />
       <Stack.Screen name="Forgot"   component={Forgot} />
       <Stack.Screen name="ForgotPassword"   component={ForgotPassword} />
       <Stack.Screen name="PhoneValidation" component={PhoneValidation} />
       <Stack.Screen name="SelectList" component={SelectList} />
       <Stack.Screen name="EmailConfirmation" component={EmailConfirmation} />
+      <Stack.Screen name="Register" component={Meetings} />
     </Stack.Navigator>
     </NavigationContainer>
   );

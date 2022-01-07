@@ -1,5 +1,5 @@
 import { StatusBar } from "react-native";
-import Colors from "./colors";
+import Colors from "./Colors";
 
 const container = {
   marginTop: StatusBar.currentHeight,

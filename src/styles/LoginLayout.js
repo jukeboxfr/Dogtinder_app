@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 import Layout from "./Layout";
-import Colors from "./colors";
+import Colors from "./Colors";
 
 const container =  {
   ...Layout.getContainerWithPadding(20),

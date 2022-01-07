@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 
-import Typography from "../../styles/typography"
+import Typography from "../../styles/Typography"
 
 const Title = (props) => {
 

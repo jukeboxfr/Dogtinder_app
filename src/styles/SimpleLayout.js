@@ -1,5 +1,5 @@
 import { StyleSheet, View, StatusBar } from "react-native";
-import Colors from "./colors";
+import Colors from "./Colors";
 import Layout from "./Layout"
 
 const container = {
