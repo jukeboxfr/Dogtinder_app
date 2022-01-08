@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import Colors from "./colors"
+import Colors from "./Colors"
 
 export default StyleSheet.create({
   "form": {
@@ -60,20 +60,22 @@ export default StyleSheet.create({
     "width": "100%",
     "display": "flex",
     "flexDirection": "row",
-    "justifyContent": "space-around"
+    "justifyContent": "space-between"
   },
 
   "codeInputValue": {
     "backgroundColor": "#fff",
     "borderColor": "#B3B3B3",
-    "borderWidth": 1,
+    "borderWidth": 2,
     "borderRadius": 4,
-    "width": 50,
-    "padding": 20
+    "flex": 1,
+    "margin": 5,
+    "padding": 10
   },
 
   "codeInputText": {
-    "fontFamily": "Roboto"
+    "fontFamily": "Roboto",
+    "alignSelf": "center"
   },
 
   "codeInputValueFocused": {
@@ -86,10 +88,24 @@ export default StyleSheet.create({
     "height": 0,
     "width": 0,
     "opacity": 0
+  },
+
+  "SelectList": {
+      "flex": 1,
+      "flexDirection": "column"
+  },
+
+  "ListItem": {
+    "marginTop": 20,
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "space-between"
+  },
+
+  "TextList": {
+    "color": Colors.grey,
+    "fontSize": 30,
   }
-
-
-
 
 
 })

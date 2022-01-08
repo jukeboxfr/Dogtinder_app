@@ -1,26 +1,28 @@
 import React, { Component } from "react";
-import { StyleSheet, View} from "react-native";
+import { Image, View } from "react-native";
 
-import Header from "./Header";
+import styles from "../../styles/SimpleLayout";
+import  Button  from "../../components/atoms/Button";
 
 export default class SimpleLayout extends Component {
 
   render() {
 
     return (
-    <View style={styles.container}>
-      <Header navigation={this.props.navigation} />
-      {this.props.children}
-    </View>
-  )
+      <View style={styles.container}>
+
+        <View style={styles.header}>
+          <Button round style={styles.goBackButton} onPress={() => this.props.navigation.goBack()}>
+            <Image
+              style={styles.goBackIcon}
+              source={require("../../../assets/images/icons/arrow-left.png")} />
+          </Button>
+        </View>
+
+        <View style={styles.body}>
+          {this.props.children}
+        </View>
+      </View>
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  "container": {
-    "backgroundColor": "white",
-    "flex": 1,
-    "display": "flex",
-    "flexDirection": "column"
-  }
-})

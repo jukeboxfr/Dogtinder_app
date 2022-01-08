@@ -1,34 +1,27 @@
 import React, { useState, Component } from "react";
 import { View, Text, ImageBackground, TouchableOpacity, Image, StyleSheet } from "react-native";
 
+import styles from "../styles/SimpleLayout"
 
-import SimpleLayout from "../components/templates/SimpleLayout"
-
-import ForgotStyle from "../styles/Forgot"
-
-import Title from "../components/atoms/Title";
-import Button from "../components/atoms/Button"
-import Header from "../components/templates/Header";
+import { Title, Button, Header, SimpleLayout } from "../components";
 
 import fr from "../locales/fr.json";
 
 class Forgot extends Component {
 
-
   onPressForgot() {
-    this.props.navigation.navigate("ForgotNext");
+    this.props.navigation.navigate("ForgotPassword");
   }
 
   render() {
     return (
       <SimpleLayout navigation={this.props.navigation}>
-        <View style={ForgotStyle.container}>
+        <View style={styles.container}>
           <Title>{fr.FORGOT.TITLE}</Title>
-          <Text style={ForgotStyle.text}>{fr.FORGOT.TEXT}</Text>
-          <Button
-            style={ForgotStyle.submit}
-            onPress={() => this.onPressForgot()}>{fr.FORGOT.BUTTONS.SUBMIT}
-          </Button>
+          <Text style={styles.text}>{fr.FORGOT.TEXT}</Text>
+          <View style={styles.buttons}>
+            <Button style={styles.submit} onPress={() => this.onPressForgot()}>{fr.FORGOT.BUTTONS.SUBMIT}</Button>
+          </View>
         </View>
       </SimpleLayout>
     )

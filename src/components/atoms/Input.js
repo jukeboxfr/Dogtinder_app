@@ -11,7 +11,6 @@ class Input extends Component {
           style={styles.baseInput}
           placeholder={this.props.placeholder}
           placeholderTextColor={this.props.placeholderTextColor} />
-          <Text>Label</Text>
       </View>
     )
   }

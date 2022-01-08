@@ -1,6 +1,6 @@
 import { StyleSheet, Dimensions } from 'react-native';
-import Colors from "./colors";
-import Typography from "./typography"
+import Colors from "./Colors";
+import Typography from "./Typography"
 
 const dimensions = Dimensions.get("window")
 
@@ -72,6 +72,24 @@ styles.roundButton = {
   ...styles.withShadow,
   borderRadius: 100
 }
+
+styles.miniButton = {
+  padding: 5,
+  backgroundColor: "#fff",
+  borderColor: "#707070",
+  borderWidth: 2,
+  color: "#000"
+}
+
+styles.innerMiniButton = {
+  fontWeight: "bold",
+  fontSize: 10,
+  color: "#000"
+}
+
+
+
+
 
 styles.innerButtonIcon = {}
 styles.innerButtonIcon.marginLeft = "auto";
