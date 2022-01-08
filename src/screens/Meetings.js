@@ -19,8 +19,13 @@ const Meetings = (props) => {
       <ToggleSwitch value={value} onValueChange={onValueChange} />
 
       <ImageBackground imageStyle={styles.imageCard} style={styles.card} source={SampleImage}>
-        <View style={styles.description}>
-        </View>
+        <TouchableOpacity style={styles.descCard}>
+          <View style={styles.descWrapperCard}>
+            <Text style={styles.descNameCard}>Tessa</Text>
+            <Text style={styles.descNameAge}>25</Text>
+          </View>
+          <Text style={styles.descLocation}>à Paris</Text>
+        </TouchableOpacity>
       </ImageBackground>
 
       <View style={styles.buttons}>
